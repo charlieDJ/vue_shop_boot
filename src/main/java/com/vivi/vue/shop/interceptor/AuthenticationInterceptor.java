@@ -24,6 +24,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        if (request.getRequestURL().toString().endsWith("index.html")) {
+//            return true;
+//        }
         // 预检请求直接放行
         if (request.getMethod().equals("OPTIONS")) {
             return true;
