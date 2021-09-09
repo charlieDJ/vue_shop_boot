@@ -1,40 +1,36 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.util.Date;
+
 /**
- * 
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the Report2Entity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_report_2")
-public class Report2Entity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_report_2")
+public class Report2Entity {
 
-	/**
-	 * 
-	 */
-	@TableId
-	private Integer id;
-	/**
-	 * 
-	 */
-	private String rp2Page;
-	/**
-	 * 
-	 */
-	private Integer rp2Count;
-	/**
-	 * 
-	 */
-	private Date rp2Date;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @TableField("id")
+    private Integer id;
+    @Column(name = "rp2_page")
+    @TableField("rp2_page")
+    private String rp2Page;
+    @Column(name = "rp2_count")
+    @TableField("rp2_count")
+    private Integer rp2Count;
+    @Column(name = "rp2_date")
+    @TableField("rp2_date")
+    private Date rp2Date;
 
 }

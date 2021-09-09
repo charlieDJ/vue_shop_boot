@@ -1,8 +1,8 @@
 package com.vivi.vue.shop.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.vivi.vue.shop.utils.PageUtils;
 import com.vivi.vue.shop.entity.AttributeEntity;
+import com.vivi.vue.shop.utils.PageUtils;
 import com.vivi.vue.shop.vo.AttributeAddVO;
 import com.vivi.vue.shop.vo.CategoryAttributeVO;
 

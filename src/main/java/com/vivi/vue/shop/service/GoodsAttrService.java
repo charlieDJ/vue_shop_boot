@@ -1,8 +1,8 @@
 package com.vivi.vue.shop.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.vivi.vue.shop.utils.PageUtils;
 import com.vivi.vue.shop.entity.GoodsAttrEntity;
+import com.vivi.vue.shop.utils.PageUtils;
 
 import java.util.List;
 import java.util.Map;

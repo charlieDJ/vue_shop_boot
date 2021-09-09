@@ -1,49 +1,42 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
+
 /**
- * 商品订单关联表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the OrderGoodsEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_order_goods")
-public class OrderGoodsEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_order_goods")
+public class OrderGoodsEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer id;
-	/**
-	 * 订单id
-	 */
-	private Integer orderId;
-	/**
-	 * 商品id
-	 */
-	private Integer goodsId;
-	/**
-	 * 商品单价
-	 */
-	private BigDecimal goodsPrice;
-	/**
-	 * 购买单个商品数量
-	 */
-	private Integer goodsNumber;
-	/**
-	 * 商品小计价格
-	 */
-	private BigDecimal goodsTotalPrice;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @TableField("id")
+    private Integer id;
+    @Column(name = "order_id")
+    @TableField("order_id")
+    private Integer orderId;
+    @Column(name = "goods_id")
+    @TableField("goods_id")
+    private Integer goodsId;
+    @Column(name = "goods_price")
+    @TableField("goods_price")
+    private BigDecimal goodsPrice;
+    @Column(name = "goods_number")
+    @TableField("goods_number")
+    private Integer goodsNumber;
+    @Column(name = "goods_total_price")
+    @TableField("goods_total_price")
+    private BigDecimal goodsTotalPrice;
 
 }

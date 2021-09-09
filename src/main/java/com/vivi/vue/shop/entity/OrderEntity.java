@@ -1,81 +1,67 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 订单表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the OrderEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_order")
-public class OrderEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_order")
+public class OrderEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer orderId;
-	/**
-	 * 下订单会员id
-	 */
-	private Integer userId;
-	/**
-	 * 订单编号
-	 */
-	private String orderNumber;
-	/**
-	 * 订单总金额
-	 */
-	private BigDecimal orderPrice;
-	/**
-	 * 支付方式  '未支付' '支付宝'  '微信'  '银行卡'
-	 */
-	private String orderPay;
-	/**
-	 * 订单是否已经发货 [是，否]
-	 */
-	private String isSend;
-	/**
-	 * 支付宝交易流水号码
-	 */
-	private String tradeNo;
-	/**
-	 * 发票抬头 [个人,公司]
-	 */
-	private String orderFapiaoTitle;
-	/**
-	 * 公司名称
-	 */
-	private String orderFapiaoCompany;
-	/**
-	 * 发票内容
-	 */
-	private String orderFapiaoContent;
-	/**
-	 * consignee收货人地址
-	 */
-	private String consigneeAddr;
-	/**
-	 * 订单状态：'未付款'、'已付款'
-	 */
-	private String payStatus;
-	/**
-	 * 记录生成时间
-	 */
-	private Date createTime;
-	/**
-	 * 记录修改时间
-	 */
-	private Date updateTime;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
+    @TableField("order_id")
+    private Integer orderId;
+    @Column(name = "user_id")
+    @TableField("user_id")
+    private Integer userId;
+    @Column(name = "order_number")
+    @TableField("order_number")
+    private String orderNumber;
+    @Column(name = "order_price")
+    @TableField("order_price")
+    private BigDecimal orderPrice;
+    @Column(name = "order_pay")
+    @TableField("order_pay")
+    private String orderPay;
+    @Column(name = "is_send")
+    @TableField("is_send")
+    private String isSend;
+    @Column(name = "trade_no")
+    @TableField("trade_no")
+    private String tradeNo;
+    @Column(name = "order_fapiao_title")
+    @TableField("order_fapiao_title")
+    private String orderFapiaoTitle;
+    @Column(name = "order_fapiao_company")
+    @TableField("order_fapiao_company")
+    private String orderFapiaoCompany;
+    @Column(name = "order_fapiao_content")
+    @TableField("order_fapiao_content")
+    private String orderFapiaoContent;
+    @Column(name = "consignee_addr")
+    @TableField("consignee_addr")
+    private String consigneeAddr;
+    @Column(name = "pay_status")
+    @TableField("pay_status")
+    private String payStatus;
+    @Column(name = "create_time")
+    @TableField("create_time")
+    private Date createTime;
+    @Column(name = "update_time")
+    @TableField("update_time")
+    private Date updateTime;
 
 }

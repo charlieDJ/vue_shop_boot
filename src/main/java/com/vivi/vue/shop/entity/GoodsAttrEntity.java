@@ -1,45 +1,39 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
+
 /**
- * 商品-属性关联表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the GoodsAttrEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_goods_attr")
-public class GoodsAttrEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_goods_attr")
+public class GoodsAttrEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer id;
-	/**
-	 * 商品id
-	 */
-	private Integer goodsId;
-	/**
-	 * 属性id
-	 */
-	private Integer attrId;
-	/**
-	 * 商品对应属性的值
-	 */
-	private String attrValue;
-	/**
-	 * 该属性需要额外增加的价钱
-	 */
-	private BigDecimal addPrice;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @TableField("id")
+    private Integer id;
+    @Column(name = "goods_id")
+    @TableField("goods_id")
+    private Integer goodsId;
+    @Column(name = "attr_id")
+    @TableField("attr_id")
+    private Integer attrId;
+    @Column(name = "attr_value")
+    @TableField("attr_value")
+    private String attrValue;
+    @Column(name = "add_price")
+    @TableField("add_price")
+    private BigDecimal addPrice;
 
 }

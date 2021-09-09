@@ -1,52 +1,44 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+
 /**
- * 
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the GoodsCatsEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_goods_cats")
-public class GoodsCatsEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_goods_cats")
+public class GoodsCatsEntity {
 
-	/**
-	 * 分类id
-	 */
-	@TableId
-	private Integer catId;
-	/**
-	 * 父级id
-	 */
-	private Integer parentId;
-	/**
-	 * 分类名称
-	 */
-	private String catName;
-	/**
-	 * 是否显示
-	 */
-	private Integer isShow;
-	/**
-	 * 分类排序
-	 */
-	private Integer catSort;
-	/**
-	 * 数据标记
-	 */
-	private Integer dataFlag;
-	/**
-	 * 创建时间
-	 */
-	private Integer createTime;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cat_id")
+    @TableField("cat_id")
+    private Integer catId;
+    @Column(name = "parent_id")
+    @TableField("parent_id")
+    private Integer parentId;
+    @Column(name = "cat_name")
+    @TableField("cat_name")
+    private String catName;
+    @Column(name = "is_show")
+    @TableField("is_show")
+    private Integer isShow;
+    @Column(name = "cat_sort")
+    @TableField("cat_sort")
+    private Integer catSort;
+    @Column(name = "data_flag")
+    @TableField("data_flag")
+    private Integer dataFlag;
+    @Column(name = "create_time")
+    @TableField("create_time")
+    private Integer createTime;
 
 }

@@ -1,7 +1,7 @@
 package com.vivi.vue.shop.dao;
 
-import com.vivi.vue.shop.entity.GoodsCatsEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.vivi.vue.shop.entity.GoodsCatsEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

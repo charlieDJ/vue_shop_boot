@@ -1,44 +1,38 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+
 /**
- * 商品-相册关联表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the GoodsPicsEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_goods_pics")
-public class GoodsPicsEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_goods_pics")
+public class GoodsPicsEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer picsId;
-	/**
-	 * 商品id
-	 */
-	private Integer goodsId;
-	/**
-	 * 相册大图800*800
-	 */
-	private String picsBig;
-	/**
-	 * 相册中图350*350
-	 */
-	private String picsMid;
-	/**
-	 * 相册小图50*50
-	 */
-	private String picsSma;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pics_id")
+    @TableField("pics_id")
+    private Integer picsId;
+    @Column(name = "goods_id")
+    @TableField("goods_id")
+    private Integer goodsId;
+    @Column(name = "pics_big")
+    @TableField("pics_big")
+    private String picsBig;
+    @Column(name = "pics_mid")
+    @TableField("pics_mid")
+    private String picsMid;
+    @Column(name = "pics_sma")
+    @TableField("pics_sma")
+    private String picsSma;
 
 }

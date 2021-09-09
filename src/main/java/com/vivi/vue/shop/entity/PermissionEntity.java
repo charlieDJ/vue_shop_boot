@@ -1,47 +1,41 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
 /**
- * 权限表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the PermissionEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_permission")
-public class PermissionEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_permission")
+public class PermissionEntity {
 
-	/**
-	 * 
-	 */
-	@TableId
-	private Integer psId;
-	/**
-	 * 权限名称
-	 */
-	private String psName;
-	/**
-	 * 父id
-	 */
-	private Integer psPid;
-	/**
-	 * 控制器
-	 */
-	private String psC;
-	/**
-	 * 操作方法
-	 */
-	private String psA;
-	/**
-	 * 权限等级 '0','1','2' 默认 '0'
-	 */
-	private Integer psLevel;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ps_id")
+    @TableField("ps_id")
+    private Integer psId;
+    @Column(name = "ps_name")
+    @TableField("ps_name")
+    private String psName;
+    @Column(name = "ps_pid")
+    @TableField("ps_pid")
+    private Integer psPid;
+    @Column(name = "ps_c")
+    @TableField("ps_c")
+    private String psC;
+    @Column(name = "ps_a")
+    @TableField("ps_a")
+    private String psA;
+    @Column(name = "ps_level")
+    @TableField("ps_level")
+    private Integer psLevel;
 
 }

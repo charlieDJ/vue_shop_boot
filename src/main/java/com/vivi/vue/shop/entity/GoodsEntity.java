@@ -1,101 +1,82 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 商品表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the GoodsEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_goods")
-public class GoodsEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_goods")
+public class GoodsEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer goodsId;
-	/**
-	 * 商品名称
-	 */
-	private String goodsName;
-	/**
-	 * 商品价格
-	 */
-	private BigDecimal goodsPrice;
-	/**
-	 * 商品数量
-	 */
-	private Integer goodsNumber;
-	/**
-	 * 商品重量
-	 */
-	private Integer goodsWeight;
-	/**
-	 * 类型id
-	 */
-	private Integer catId;
-	/**
-	 * 商品详情介绍
-	 */
-	private String goodsIntroduce;
-	/**
-	 * 图片logo大图
-	 */
-	private String goodsBigLogo;
-	/**
-	 * 图片logo小图
-	 */
-	private String goodsSmallLogo;
-	/**
-	 * '是' 、 '否'
-	 */
-	private String isDel;
-	/**
-	 * 添加商品时间
-	 */
-	private Date addTime;
-	/**
-	 * 修改商品时间
-	 */
-	private Date updTime;
-	/**
-	 * 软删除标志字段
-	 */
-	private Date deleteTime;
-	/**
-	 * 一级分类id
-	 */
-	private Integer catOneId;
-	/**
-	 * 二级分类id
-	 */
-	private Integer catTwoId;
-	/**
-	 * 三级分类id
-	 */
-	private Integer catThreeId;
-	/**
-	 * 热卖数量
-	 */
-	private Integer hotNumber;
-	/**
-	 * 是否促销
-	 */
-	private Integer isPromote;
-	/**
-	 * 商品状态 0: 未通过 1: 审核中 2: 已审核
-	 */
-	private Integer goodsState;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "goods_id")
+    @TableField("goods_id")
+    private Integer goodsId;
+    @Column(name = "goods_name")
+    @TableField("goods_name")
+    private String goodsName;
+    @Column(name = "goods_price")
+    @TableField("goods_price")
+    private BigDecimal goodsPrice;
+    @Column(name = "goods_number")
+    @TableField("goods_number")
+    private Integer goodsNumber;
+    @Column(name = "goods_weight")
+    @TableField("goods_weight")
+    private Integer goodsWeight;
+    @Column(name = "cat_id")
+    @TableField("cat_id")
+    private Integer catId;
+    @Column(name = "goods_introduce")
+    @TableField("goods_introduce")
+    private String goodsIntroduce;
+    @Column(name = "goods_big_logo")
+    @TableField("goods_big_logo")
+    private String goodsBigLogo;
+    @Column(name = "goods_small_logo")
+    @TableField("goods_small_logo")
+    private String goodsSmallLogo;
+    @Column(name = "is_del")
+    @TableField("is_del")
+    private String isDel;
+    @Column(name = "add_time")
+    @TableField("add_time")
+    private Date addTime;
+    @Column(name = "upd_time")
+    @TableField("upd_time")
+    private Date updTime;
+    @Column(name = "delete_time")
+    @TableField("delete_time")
+    private Date deleteTime;
+    @Column(name = "cat_one_id")
+    @TableField("cat_one_id")
+    private Integer catOneId;
+    @Column(name = "cat_two_id")
+    @TableField("cat_two_id")
+    private Integer catTwoId;
+    @Column(name = "cat_three_id")
+    @TableField("cat_three_id")
+    private Integer catThreeId;
+    @Column(name = "hot_number")
+    @TableField("hot_number")
+    private Integer hotNumber;
+    @Column(name = "is_promote")
+    @TableField("is_promote")
+    private Integer isPromote;
+    @Column(name = "goods_state")
+    @TableField("goods_state")
+    private Integer goodsState;
 
 }

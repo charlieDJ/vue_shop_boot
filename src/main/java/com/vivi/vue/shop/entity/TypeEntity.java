@@ -1,36 +1,32 @@
 package com.vivi.vue.shop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import javax.persistence.*;
+
 /**
- * 类型表
- * 
- * @author wangwei
- * @email xidian.wangwei@gmail.com
- * @date 2021-02-08 19:39:50
- */
+* the TypeEntity type
+* @author felord.cn
+*/
 @Data
 @TableName("sp_type")
-public class TypeEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity(name = "sp_type")
+public class TypeEntity {
 
-	/**
-	 * 主键id
-	 */
-	@TableId
-	private Integer typeId;
-	/**
-	 * 类型名称
-	 */
-	private String typeName;
-	/**
-	 * 删除时间标志
-	 */
-	private Integer deleteTime;
+    @TableId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "type_id")
+    @TableField("type_id")
+    private Integer typeId;
+    @Column(name = "type_name")
+    @TableField("type_name")
+    private String typeName;
+    @Column(name = "delete_time")
+    @TableField("delete_time")
+    private Integer deleteTime;
 
 }

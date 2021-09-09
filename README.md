@@ -2,8 +2,8 @@
 
 ### 前端代码地址：https://github.com/charlieDJ/vue_shop
 
-### 启动
-现在已经把前端项目打包后的文件放在了此工程内部，用于快速演示效果。
-启动springboot应用的同时部署了前端工程应用。不要修改springboot的端口号。
-
-将 vue_shop.sql 文件导入mysql数据库中，并修改配置文件中的mysql连接，即可正常启动。
+### 启动前的操作
+此项目已经将前端工程打包，不需要额外打包前端工程。
+同时将数据库更换为H2，不需要用户安装mysql。但需要配置H2数据库的位置，即修改 spring.datasource.url 的值。
+比如，spring.datasource.url=jdbc:h2:~/test，即把数据库放置在家目录下，对应文件名称为 test.mv.db。
+test.mv.db 文件已经放在 resources/db/ 目录下。
